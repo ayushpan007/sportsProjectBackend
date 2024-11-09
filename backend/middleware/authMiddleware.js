@@ -3,7 +3,7 @@ const User = require('../models/userModel');
 
 const authorize = async (req, res, next) => {
     try {
-        const ignorePaths = ['/ping', '/getToken', '/registerUser'];
+        const ignorePaths = ['/ping', '/login', '/registerUser'];
         if (ignorePaths.includes(req.path)) {
             return next();
         }
