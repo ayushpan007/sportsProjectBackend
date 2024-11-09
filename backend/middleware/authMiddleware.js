@@ -2,6 +2,9 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 
 const authorize = async (req, res, next) => {
+    if (req.headers.upgrade && req.headers.upgrade === 'websocket') {
+        return next();
+    }
     try {
         const ignorePaths = ['/ping', '/login', '/registerUser'];
         if (ignorePaths.includes(req.path)) {
