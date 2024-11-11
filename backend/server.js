@@ -20,7 +20,7 @@ const port = process.env.PORT || 3000;
 (async () => {
   try {
     await connectDB();
-    await seedMatchData();
+    //await seedMatchData();
     console.log('Database connected and seeded successfully');
   } catch (error) {
     console.error('Error connecting to the database or seeding data:', error);
